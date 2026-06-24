@@ -155,6 +155,10 @@ const categoryRules = [
 ];
 
 const categoryAliases = {
+  "": "现金/固收",
+  其他: "现金/固收",
+  现金: "现金/固收",
+  可用现金: "现金/固收",
   银行: "金融红利",
   保险: "金融红利",
   电力公用: "金融红利",
@@ -171,6 +175,7 @@ const categoryAliases = {
 
 const categoryColors = {
   金融红利: "#176b87",
+  总盈亏: "#182025",
   "现金/固收": "#147a55",
   制造成长: "#b33a3a",
   科技成长: "#6d5dfc",
@@ -307,12 +312,15 @@ function dbSaveSnapshot(snapshot) {
 }
 
 function inferCategory(name) {
+  if (name.includes("现金") || name.includes("可用")) return "现金/固收";
   const hit = categoryRules.find((rule) => rule.keys.some((key) => name.includes(key)));
-  return hit?.category || "其他";
+  return hit?.category || "现金/固收";
 }
 
 function normalizeCategory(category, name = "") {
-  return categoryAliases[category] || inferCategory(name) || category || "其他";
+  const normalized = String(category || "").trim();
+  if (categoryAliases[normalized]) return categoryAliases[normalized];
+  return inferCategory(name);
 }
 
 function parseNumber(value) {
@@ -567,7 +575,15 @@ function renderPortfolio(snapshot) {
     return;
   }
 
-  const analysis = snapshot.analysis;
+  const analysis = analyzePositions(
+    snapshot.positions.map((position) => ({
+      ...position,
+      category: normalizeCategory(position.category, position.name),
+    })),
+  );
+  if (snapshot.analysis?.advices?.length) {
+    analysis.advices = snapshot.analysis.advices;
+  }
   els.portfolioValue.textContent = formatMoney(analysis.totalValue);
   els.portfolioPnl.textContent = `${analysis.totalPnl >= 0 ? "+" : ""}${formatMoney(analysis.totalPnl)}`;
   els.portfolioPnl.style.color = analysis.totalPnl >= 0 ? "var(--bad)" : "var(--accent)";
@@ -620,7 +636,7 @@ function escapeSvgText(value) {
 
 function renderPnlChart() {
   const datedSnapshots = snapshots
-    .filter((snapshot) => snapshot.analysis?.categories?.length)
+    .filter((snapshot) => snapshot.positions?.length)
     .slice()
     .sort((a, b) => a.date.localeCompare(b.date));
 
@@ -629,25 +645,45 @@ function renderPnlChart() {
     return;
   }
 
-  const categories = [
-    ...new Set(
-      datedSnapshots.flatMap((snapshot) => snapshot.analysis.categories.map((item) => item.category)),
+  const chartSnapshots = datedSnapshots.map((snapshot) => ({
+    ...snapshot,
+    analysis: analyzePositions(
+      snapshot.positions.map((position) => ({
+        ...position,
+        category: normalizeCategory(position.category, position.name),
+      })),
     ),
-  ].sort((a, b) => {
-    const latest = datedSnapshots[datedSnapshots.length - 1];
-    const av = latest.analysis.categories.find((item) => item.category === a)?.marketValue || 0;
-    const bv = latest.analysis.categories.find((item) => item.category === b)?.marketValue || 0;
-    return bv - av;
-  });
-
-  const series = categories.map((category) => ({
-    category,
-    color: categoryColors[category] || categoryColors["其他"],
-    points: datedSnapshots.map((snapshot) => ({
-      date: snapshot.date,
-      pnl: snapshot.analysis.categories.find((item) => item.category === category)?.pnl || 0,
-    })),
   }));
+
+  const categories = [
+    ...new Set(chartSnapshots.flatMap((snapshot) => snapshot.analysis.categories.map((item) => item.category))),
+  ]
+    .filter((category) => category !== "其他")
+    .sort((a, b) => {
+      const latest = chartSnapshots[chartSnapshots.length - 1];
+      const av = latest.analysis.categories.find((item) => item.category === a)?.marketValue || 0;
+      const bv = latest.analysis.categories.find((item) => item.category === b)?.marketValue || 0;
+      return bv - av;
+    });
+
+  const series = [
+    {
+      category: "总盈亏",
+      color: categoryColors["总盈亏"],
+      points: chartSnapshots.map((snapshot) => ({
+        date: snapshot.date,
+        pnl: snapshot.analysis.totalPnl || 0,
+      })),
+    },
+    ...categories.map((category) => ({
+      category,
+      color: categoryColors[category] || categoryColors["其他"],
+      points: chartSnapshots.map((snapshot) => ({
+        date: snapshot.date,
+        pnl: snapshot.analysis.categories.find((item) => item.category === category)?.pnl || 0,
+      })),
+    })),
+  ];
 
   const allValues = series.flatMap((item) => item.points.map((point) => point.pnl));
   const rawMin = Math.min(...allValues, 0);
@@ -660,9 +696,9 @@ function renderPnlChart() {
   const margin = { top: 26, right: 24, bottom: 52, left: 86 };
   const chartWidth = width - margin.left - margin.right;
   const chartHeight = height - margin.top - margin.bottom;
-  const xStep = datedSnapshots.length > 1 ? chartWidth / (datedSnapshots.length - 1) : 0;
+  const xStep = chartSnapshots.length > 1 ? chartWidth / (chartSnapshots.length - 1) : 0;
   const yScale = (value) => margin.top + ((maxY - value) / (maxY - minY || 1)) * chartHeight;
-  const xScale = (index) => margin.left + (datedSnapshots.length > 1 ? index * xStep : chartWidth / 2);
+  const xScale = (index) => margin.left + (chartSnapshots.length > 1 ? index * xStep : chartWidth / 2);
   const ticks = Array.from({ length: 5 }, (_, index) => minY + ((maxY - minY) * index) / 4);
   const zeroY = yScale(0);
 
@@ -676,7 +712,7 @@ function renderPnlChart() {
     })
     .join("");
 
-  const xLabels = datedSnapshots
+  const xLabels = chartSnapshots
     .map((snapshot, index) => {
       const x = xScale(index);
       return `
