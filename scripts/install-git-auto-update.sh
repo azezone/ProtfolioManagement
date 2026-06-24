@@ -22,6 +22,7 @@ if ! command -v node >/dev/null 2>&1; then
 fi
 
 if [[ -d "$APP_DIR/.git" ]]; then
+  git config --global --add safe.directory "$APP_DIR" || true
   git -C "$APP_DIR" remote set-url origin "$REPO_URL"
   git -C "$APP_DIR" fetch origin "$BRANCH"
   git -C "$APP_DIR" reset --hard "origin/$BRANCH"
@@ -42,6 +43,7 @@ cat > "$APP_DIR/update-from-git.sh" <<'UPDATE'
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")"
+git config --global --add safe.directory "$(pwd)" || true
 git fetch origin main
 LOCAL="$(git rev-parse HEAD)"
 REMOTE="$(git rev-parse origin/main)"
