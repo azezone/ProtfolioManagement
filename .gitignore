@@ -1,0 +1,5 @@
+.env
+*.log
+money-app.tar.gz
+test-pixel.png
+*.pem

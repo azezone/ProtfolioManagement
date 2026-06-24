@@ -1,0 +1,927 @@
+[
+  {
+    "id": "2026-06-21-guojin-1024",
+    "date": "2026-06-21",
+    "source": {
+      "type": "image",
+      "path": "D:/Desktop/1782028385777.png",
+      "account": "国金证券 **1024"
+    },
+    "summary": {
+      "totalAssets": 669496.43,
+      "totalMarketValue": 648905.7,
+      "floatingPnl": -35102.57,
+      "dayPnl": -11615.1,
+      "dayPnlRate": -0.0171,
+      "availableCash": 592.14,
+      "positionRate": 0.969
+    },
+    "positions": [
+      {
+        "name": "交通银行",
+        "category": "金融红利",
+        "marketValue": 48764,
+        "pnl": 175.15,
+        "pnlRate": 0.0042,
+        "shares": 7300,
+        "availableShares": 7300,
+        "costPrice": 6.652,
+        "currentPrice": 6.68
+      },
+      {
+        "name": "短融ETF",
+        "category": "现金/固收",
+        "marketValue": 90845.6,
+        "pnl": 79.3,
+        "pnlRate": 0.0009,
+        "shares": 800,
+        "availableShares": 800,
+        "costPrice": 113.458,
+        "currentPrice": 113.557
+      },
+      {
+        "name": "银华日利",
+        "category": "现金/固收",
+        "marketValue": 110586.3,
+        "pnl": 38.8,
+        "pnlRate": 0.0004,
+        "shares": 1100,
+        "availableShares": 1100,
+        "costPrice": 100.498,
+        "currentPrice": 100.533
+      },
+      {
+        "name": "长江电力",
+        "category": "金融红利",
+        "marketValue": 10664,
+        "pnl": -10.94,
+        "pnlRate": 0,
+        "shares": 400,
+        "availableShares": 400,
+        "costPrice": 26.66,
+        "currentPrice": 26.66
+      },
+      {
+        "name": "招商银行",
+        "category": "金融红利",
+        "marketValue": 22356,
+        "pnl": -52.12,
+        "pnlRate": -0.0016,
+        "shares": 600,
+        "availableShares": 600,
+        "costPrice": 37.319,
+        "currentPrice": 37.26
+      },
+      {
+        "name": "恒生科H",
+        "category": "科技成长",
+        "marketValue": 7616,
+        "pnl": -347.7,
+        "pnlRate": -0.0436,
+        "shares": 11200,
+        "availableShares": 11200,
+        "costPrice": 0.711,
+        "currentPrice": 0.68
+      },
+      {
+        "name": "工商银行",
+        "category": "金融红利",
+        "marketValue": 40812,
+        "pnl": -507.73,
+        "pnlRate": -0.0117,
+        "shares": 5700,
+        "availableShares": 5700,
+        "costPrice": 7.245,
+        "currentPrice": 7.16
+      },
+      {
+        "name": "中国平安",
+        "category": "金融红利",
+        "marketValue": 9876,
+        "pnl": -536.54,
+        "pnlRate": -0.0506,
+        "shares": 200,
+        "availableShares": 200,
+        "costPrice": 52.01,
+        "currentPrice": 49.38
+      },
+      {
+        "name": "长江电力",
+        "category": "金融红利",
+        "marketValue": 34658,
+        "pnl": -570.54,
+        "pnlRate": -0.0155,
+        "shares": 1300,
+        "availableShares": 1300,
+        "costPrice": 27.081,
+        "currentPrice": 26.66
+      },
+      {
+        "name": "黄金ETF",
+        "category": "商品周期",
+        "marketValue": 14252.8,
+        "pnl": -867.91,
+        "pnlRate": -0.0574,
+        "shares": 1600,
+        "availableShares": 1600,
+        "costPrice": 9.45,
+        "currentPrice": 8.908
+      },
+      {
+        "name": "港股通50",
+        "category": "科技成长",
+        "marketValue": 6179.8,
+        "pnl": -928,
+        "pnlRate": -0.1305,
+        "shares": 5300,
+        "availableShares": 5300,
+        "costPrice": 1.341,
+        "currentPrice": 1.166
+      },
+      {
+        "name": "中远海控",
+        "category": "商品周期",
+        "marketValue": 19320,
+        "pnl": -1182.55,
+        "pnlRate": -0.057,
+        "shares": 1400,
+        "availableShares": 1400,
+        "costPrice": 14.634,
+        "currentPrice": 13.8
+      },
+      {
+        "name": "通威股份",
+        "category": "制造成长",
+        "marketValue": 6425,
+        "pnl": -1378.77,
+        "pnlRate": -0.1758,
+        "shares": 500,
+        "availableShares": 500,
+        "costPrice": 15.59,
+        "currentPrice": 12.85
+      },
+      {
+        "name": "中概互联",
+        "category": "科技成长",
+        "marketValue": 12268.9,
+        "pnl": -1428.61,
+        "pnlRate": -0.1043,
+        "shares": 11900,
+        "availableShares": 11900,
+        "costPrice": 1.151,
+        "currentPrice": 1.031
+      },
+      {
+        "name": "恒生科技",
+        "category": "科技成长",
+        "marketValue": 10238.8,
+        "pnl": -2095.43,
+        "pnlRate": -0.1698,
+        "shares": 17900,
+        "availableShares": 17900,
+        "costPrice": 0.689,
+        "currentPrice": 0.572
+      },
+      {
+        "name": "中概互联",
+        "category": "科技成长",
+        "marketValue": 13299.9,
+        "pnl": -2617.66,
+        "pnlRate": -0.1644,
+        "shares": 12900,
+        "availableShares": 12900,
+        "costPrice": 1.234,
+        "currentPrice": 1.031
+      },
+      {
+        "name": "医疗ETF",
+        "category": "消费医药",
+        "marketValue": 15350.4,
+        "pnl": -3445.67,
+        "pnlRate": -0.1833,
+        "shares": 41600,
+        "availableShares": 41600,
+        "costPrice": 0.452,
+        "currentPrice": 0.369
+      },
+      {
+        "name": "比亚迪",
+        "category": "制造成长",
+        "marketValue": 26439,
+        "pnl": -4676.72,
+        "pnlRate": -0.1498,
+        "shares": 300,
+        "availableShares": 300,
+        "costPrice": 103.657,
+        "currentPrice": 88.13
+      },
+      {
+        "name": "比亚迪",
+        "category": "制造成长",
+        "marketValue": 52878,
+        "pnl": -4753.94,
+        "pnlRate": -0.082,
+        "shares": 600,
+        "availableShares": 600,
+        "costPrice": 96,
+        "currentPrice": 88.13
+      },
+      {
+        "name": "中国平安",
+        "category": "金融红利",
+        "marketValue": 88884,
+        "pnl": -4983.84,
+        "pnlRate": -0.0526,
+        "shares": 1800,
+        "availableShares": 1800,
+        "costPrice": 52.119,
+        "currentPrice": 49.38
+      },
+      {
+        "name": "酒ETF",
+        "category": "消费医药",
+        "marketValue": 7191.2,
+        "pnl": -5011.15,
+        "pnlRate": -0.4106,
+        "shares": 17800,
+        "availableShares": 17800,
+        "costPrice": 0.685,
+        "currentPrice": 0.404
+      }
+    ],
+    "analysis": {
+      "totalValue": 648905.7,
+      "totalPnl": -35102.57,
+      "totalPnlRate": -0.0541,
+      "positionCount": 21,
+      "categories": [
+        {
+          "category": "金融红利",
+          "marketValue": 256014,
+          "pnl": -6486.5599999999995,
+          "count": 7,
+          "weight": 0.3945,
+          "pnlRate": -0.0253
+        },
+        {
+          "category": "现金/固收",
+          "marketValue": 201431.90000000002,
+          "pnl": 118.1,
+          "count": 2,
+          "weight": 0.3104,
+          "pnlRate": 0.0006
+        },
+        {
+          "category": "制造成长",
+          "marketValue": 85742,
+          "pnl": -10809.43,
+          "count": 3,
+          "weight": 0.1321,
+          "pnlRate": -0.1261
+        },
+        {
+          "category": "科技成长",
+          "marketValue": 49603.4,
+          "pnl": -7417.4,
+          "count": 5,
+          "weight": 0.0764,
+          "pnlRate": -0.1495
+        },
+        {
+          "category": "商品周期",
+          "marketValue": 33572.8,
+          "pnl": -2050.46,
+          "count": 2,
+          "weight": 0.0517,
+          "pnlRate": -0.0611
+        },
+        {
+          "category": "消费医药",
+          "marketValue": 22541.6,
+          "pnl": -8456.82,
+          "count": 2,
+          "weight": 0.0347,
+          "pnlRate": -0.3752
+        }
+      ],
+      "advices": [
+        "现金/固收占比约31%，组合有较强缓冲垫，可作为再平衡和分批配置资金来源。",
+        "金融红利合并了银行、保险和电力，已成为最主要底仓，重点跟踪股息、估值和资产质量。",
+        "制造成长和科技成长是主要波动来源，亏损贡献较大，加仓前应设置总仓位上限。",
+        "消费医药亏损较深但权重不高，优先复核长期逻辑，避免单纯因为跌幅补仓。",
+        "商品周期仓位较小，可作为分散配置，重点关注黄金和航运的周期差异。"
+      ]
+    },
+    "recognizedAt": "2026-06-23"
+  },
+  {
+    "id": "2026-06-23-guojin-1024",
+    "date": "2026-06-23",
+    "source": {
+      "type": "image",
+      "path": "D:/Desktop/D0D44B36038470A046E4979CD6CF58D2.png",
+      "account": "国金证券 **1024"
+    },
+    "summary": {
+      "totalAssets": 669156.29,
+      "totalMarketValue": 648581.7,
+      "floatingPnl": -35427.71,
+      "dayPnl": -6484.4,
+      "dayPnlRate": -0.0096,
+      "availableCash": 592.23,
+      "positionRate": 0.969
+    },
+    "positions": [
+      {
+        "name": "交通银行",
+        "category": "金融红利",
+        "marketValue": 49859,
+        "pnl": 1269.59,
+        "pnlRate": 0.0268,
+        "shares": 7300,
+        "availableShares": 7300,
+        "costPrice": 6.652,
+        "currentPrice": 6.83
+      },
+      {
+        "name": "工商银行",
+        "category": "金融红利",
+        "marketValue": 42066,
+        "pnl": 745.64,
+        "pnlRate": 0.0187,
+        "shares": 5700,
+        "availableShares": 5700,
+        "costPrice": 7.245,
+        "currentPrice": 7.38
+      },
+      {
+        "name": "短融ETF",
+        "category": "现金/固收",
+        "marketValue": 90885.6,
+        "pnl": 119.3,
+        "pnlRate": 0.0013,
+        "shares": 800,
+        "availableShares": 800,
+        "costPrice": 113.458,
+        "currentPrice": 113.607
+      },
+      {
+        "name": "长江电力",
+        "category": "金融红利",
+        "marketValue": 10748,
+        "pnl": 73.02,
+        "pnlRate": 0.0079,
+        "shares": 400,
+        "availableShares": 400,
+        "costPrice": 26.66,
+        "currentPrice": 26.87
+      },
+      {
+        "name": "银华日利",
+        "category": "现金/固收",
+        "marketValue": 110609.4,
+        "pnl": 61.9,
+        "pnlRate": 0.0006,
+        "shares": 1100,
+        "availableShares": 1100,
+        "costPrice": 100.498,
+        "currentPrice": 100.554
+      },
+      {
+        "name": "招商银行",
+        "category": "金融红利",
+        "marketValue": 22440,
+        "pnl": 31.84,
+        "pnlRate": 0.0022,
+        "shares": 600,
+        "availableShares": 600,
+        "costPrice": 37.319,
+        "currentPrice": 37.4
+      },
+      {
+        "name": "长江电力",
+        "category": "金融红利",
+        "marketValue": 34931,
+        "pnl": -297.68,
+        "pnlRate": -0.0078,
+        "shares": 1300,
+        "availableShares": 1300,
+        "costPrice": 27.081,
+        "currentPrice": 26.87
+      },
+      {
+        "name": "中国平安",
+        "category": "金融红利",
+        "marketValue": 10080,
+        "pnl": -332.64,
+        "pnlRate": -0.031,
+        "shares": 200,
+        "availableShares": 200,
+        "costPrice": 52.01,
+        "currentPrice": 50.4
+      },
+      {
+        "name": "恒生科H",
+        "category": "科技成长",
+        "marketValue": 7347.2,
+        "pnl": -616.5,
+        "pnlRate": -0.0774,
+        "shares": 11200,
+        "availableShares": 11200,
+        "costPrice": 0.711,
+        "currentPrice": 0.656
+      },
+      {
+        "name": "中远海控",
+        "category": "商品周期",
+        "marketValue": 19586,
+        "pnl": -916.69,
+        "pnlRate": -0.044,
+        "shares": 1400,
+        "availableShares": 1400,
+        "costPrice": 14.634,
+        "currentPrice": 13.99
+      },
+      {
+        "name": "港股通50",
+        "category": "科技成长",
+        "marketValue": 6079.1,
+        "pnl": -1028.7,
+        "pnlRate": -0.1447,
+        "shares": 5300,
+        "availableShares": 5300,
+        "costPrice": 1.341,
+        "currentPrice": 1.147
+      },
+      {
+        "name": "黄金ETF",
+        "category": "商品周期",
+        "marketValue": 13659.2,
+        "pnl": -1461.48,
+        "pnlRate": -0.0966,
+        "shares": 1600,
+        "availableShares": 1600,
+        "costPrice": 9.45,
+        "currentPrice": 8.537
+      },
+      {
+        "name": "通威股份",
+        "category": "制造成长",
+        "marketValue": 6180,
+        "pnl": -1623.65,
+        "pnlRate": -0.2072,
+        "shares": 500,
+        "availableShares": 500,
+        "costPrice": 15.59,
+        "currentPrice": 12.36
+      },
+      {
+        "name": "中概互联",
+        "category": "科技成长",
+        "marketValue": 11781,
+        "pnl": -1916.49,
+        "pnlRate": -0.1399,
+        "shares": 11900,
+        "availableShares": 11900,
+        "costPrice": 1.151,
+        "currentPrice": 0.99
+      },
+      {
+        "name": "恒生科技",
+        "category": "科技成长",
+        "marketValue": 9845,
+        "pnl": -2489.22,
+        "pnlRate": -0.2017,
+        "shares": 17900,
+        "availableShares": 17900,
+        "costPrice": 0.689,
+        "currentPrice": 0.55
+      },
+      {
+        "name": "中概互联",
+        "category": "科技成长",
+        "marketValue": 12771,
+        "pnl": -3146.54,
+        "pnlRate": -0.1977,
+        "shares": 12900,
+        "availableShares": 12900,
+        "costPrice": 1.234,
+        "currentPrice": 0.99
+      },
+      {
+        "name": "中国平安",
+        "category": "金融红利",
+        "marketValue": 90720,
+        "pnl": -3148.94,
+        "pnlRate": -0.033,
+        "shares": 1800,
+        "availableShares": 1800,
+        "costPrice": 52.119,
+        "currentPrice": 50.4
+      },
+      {
+        "name": "医疗ETF",
+        "category": "消费医药",
+        "marketValue": 15392,
+        "pnl": -3404.07,
+        "pnlRate": -0.1811,
+        "shares": 41600,
+        "availableShares": 41600,
+        "costPrice": 0.452,
+        "currentPrice": 0.37
+      },
+      {
+        "name": "酒ETF",
+        "category": "消费医药",
+        "marketValue": 7102.2,
+        "pnl": -5100.15,
+        "pnlRate": -0.4179,
+        "shares": 17800,
+        "availableShares": 17800,
+        "costPrice": 0.685,
+        "currentPrice": 0.399
+      },
+      {
+        "name": "比亚迪",
+        "category": "制造成长",
+        "marketValue": 25500,
+        "pnl": -5615.25,
+        "pnlRate": -0.18,
+        "shares": 300,
+        "availableShares": 300,
+        "costPrice": 103.657,
+        "currentPrice": 85
+      },
+      {
+        "name": "比亚迪",
+        "category": "制造成长",
+        "marketValue": 51000,
+        "pnl": -6631,
+        "pnlRate": -0.1146,
+        "shares": 600,
+        "availableShares": 600,
+        "costPrice": 96,
+        "currentPrice": 85
+      }
+    ],
+    "analysis": {
+      "totalValue": 648581.7,
+      "totalPnl": -35427.71,
+      "totalPnlRate": -0.0546,
+      "positionCount": 21,
+      "categories": [
+        {
+          "category": "金融红利",
+          "marketValue": 260844,
+          "pnl": -1659.17,
+          "count": 7,
+          "weight": 0.4022,
+          "pnlRate": -0.0064
+        },
+        {
+          "category": "现金/固收",
+          "marketValue": 201495,
+          "pnl": 181.2,
+          "count": 2,
+          "weight": 0.3107,
+          "pnlRate": 0.0009
+        },
+        {
+          "category": "制造成长",
+          "marketValue": 82680,
+          "pnl": -13869.9,
+          "count": 3,
+          "weight": 0.1275,
+          "pnlRate": -0.1678
+        },
+        {
+          "category": "科技成长",
+          "marketValue": 47823.3,
+          "pnl": -9197.45,
+          "count": 5,
+          "weight": 0.0737,
+          "pnlRate": -0.1923
+        },
+        {
+          "category": "商品周期",
+          "marketValue": 33245.2,
+          "pnl": -2378.17,
+          "count": 2,
+          "weight": 0.0513,
+          "pnlRate": -0.0715
+        },
+        {
+          "category": "消费医药",
+          "marketValue": 22494.2,
+          "pnl": -8504.22,
+          "count": 2,
+          "weight": 0.0347,
+          "pnlRate": -0.3781
+        }
+      ],
+      "advices": [
+        "金融红利约40.22%，是最大底仓，短期表现相对稳健，但单一风格占比已较高。",
+        "现金/固收约31.07%，仍提供充足缓冲，可作为后续再平衡资金来源。",
+        "制造成长和科技成长合计约20.12%，是主要亏损来源，继续加仓前应明确仓位上限。",
+        "消费医药占比不高但亏损较深，适合先复核长期逻辑，而不是机械补仓。",
+        "商品周期约5.13%，具备一定分散作用，但黄金和航运的驱动因素不同，应分开跟踪。"
+      ]
+    },
+    "recognizedAt": "2026-06-23"
+  },
+  {
+    "id": "2026-06-24-guojin-1024",
+    "date": "2026-06-24",
+    "source": {
+      "type": "image",
+      "path": "D:/Desktop/6888CDD50502054E870986A9CF85AACD.png",
+      "account": "国金证券 **1024"
+    },
+    "summary": {
+      "totalAssets": 662350.54,
+      "totalMarketValue": 607793.7,
+      "floatingPnl": -40304.3,
+      "dayPnl": -6968.2,
+      "dayPnlRate": -0.0104,
+      "availableCash": 34585.36,
+      "withdrawableCash": 1,
+      "positionRate": 0.918
+    },
+    "positions": [
+      {
+        "name": "短融ETF",
+        "category": "现金/固收",
+        "marketValue": 90868.8,
+        "pnl": 102.5,
+        "pnlRate": 0.0011,
+        "shares": 800,
+        "availableShares": 800,
+        "costPrice": 113.458,
+        "currentPrice": 113.586
+      },
+      {
+        "name": "银华日利",
+        "category": "现金/固收",
+        "marketValue": 110598.4,
+        "pnl": 50.9,
+        "pnlRate": 0.0005,
+        "shares": 1100,
+        "availableShares": 1100,
+        "costPrice": 100.498,
+        "currentPrice": 100.544
+      },
+      {
+        "name": "长江电力",
+        "category": "金融红利",
+        "marketValue": 10640,
+        "pnl": -34.93,
+        "pnlRate": -0.0023,
+        "shares": 400,
+        "availableShares": 400,
+        "costPrice": 26.66,
+        "currentPrice": 26.6
+      },
+      {
+        "name": "工商银行",
+        "category": "金融红利",
+        "marketValue": 41154,
+        "pnl": -165.9,
+        "pnlRate": -0.0034,
+        "shares": 5700,
+        "availableShares": 5700,
+        "costPrice": 7.245,
+        "currentPrice": 7.22
+      },
+      {
+        "name": "交通银行",
+        "category": "金融红利",
+        "marketValue": 48399,
+        "pnl": -189.66,
+        "pnlRate": -0.0033,
+        "shares": 7300,
+        "availableShares": 7300,
+        "costPrice": 6.652,
+        "currentPrice": 6.63
+      },
+      {
+        "name": "招商银行",
+        "category": "金融红利",
+        "marketValue": 22056,
+        "pnl": -351.97,
+        "pnlRate": -0.015,
+        "shares": 600,
+        "availableShares": 600,
+        "costPrice": 37.319,
+        "currentPrice": 36.76
+      },
+      {
+        "name": "恒生科H",
+        "category": "科技成长",
+        "marketValue": 7481.6,
+        "pnl": -482.1,
+        "pnlRate": -0.0605,
+        "shares": 11200,
+        "availableShares": 11200,
+        "costPrice": 0.711,
+        "currentPrice": 0.668
+      },
+      {
+        "name": "中国平安",
+        "category": "金融红利",
+        "marketValue": 9824,
+        "pnl": -588.51,
+        "pnlRate": -0.0556,
+        "shares": 200,
+        "availableShares": 200,
+        "costPrice": 52.01,
+        "currentPrice": 49.12
+      },
+      {
+        "name": "长江电力",
+        "category": "金融红利",
+        "marketValue": 34580,
+        "pnl": -648.5,
+        "pnlRate": -0.0178,
+        "shares": 1300,
+        "availableShares": 1300,
+        "costPrice": 27.081,
+        "currentPrice": 26.6
+      },
+      {
+        "name": "黄金ETF",
+        "category": "商品周期",
+        "marketValue": 13624,
+        "pnl": -1496.68,
+        "pnlRate": -0.0989,
+        "shares": 1600,
+        "availableShares": 1600,
+        "costPrice": 9.45,
+        "currentPrice": 8.515
+      },
+      {
+        "name": "通威股份",
+        "category": "制造成长",
+        "marketValue": 6120,
+        "pnl": -1683.62,
+        "pnlRate": -0.2149,
+        "shares": 500,
+        "availableShares": 500,
+        "costPrice": 15.59,
+        "currentPrice": 12.24
+      },
+      {
+        "name": "中概互联",
+        "category": "科技成长",
+        "marketValue": 11923.8,
+        "pnl": -1773.7,
+        "pnlRate": -0.1295,
+        "shares": 11900,
+        "availableShares": 11900,
+        "costPrice": 1.151,
+        "currentPrice": 1.002
+      },
+      {
+        "name": "恒生科技",
+        "category": "科技成长",
+        "marketValue": 10041.9,
+        "pnl": -2292.32,
+        "pnlRate": -0.1858,
+        "shares": 17900,
+        "availableShares": 17900,
+        "costPrice": 0.689,
+        "currentPrice": 0.561
+      },
+      {
+        "name": "中概互联",
+        "category": "科技成长",
+        "marketValue": 12925.8,
+        "pnl": -2991.75,
+        "pnlRate": -0.1879,
+        "shares": 12900,
+        "availableShares": 12900,
+        "costPrice": 1.234,
+        "currentPrice": 1.002
+      },
+      {
+        "name": "医疗ETF",
+        "category": "消费医药",
+        "marketValue": 15558.4,
+        "pnl": -3237.68,
+        "pnlRate": -0.1722,
+        "shares": 41600,
+        "availableShares": 41600,
+        "costPrice": 0.452,
+        "currentPrice": 0.374
+      },
+      {
+        "name": "酒ETF",
+        "category": "消费医药",
+        "marketValue": 6942,
+        "pnl": -5260.35,
+        "pnlRate": -0.4311,
+        "shares": 17800,
+        "availableShares": 17800,
+        "costPrice": 0.685,
+        "currentPrice": 0.39
+      },
+      {
+        "name": "中国平安",
+        "category": "金融红利",
+        "marketValue": 88416,
+        "pnl": -5451.56,
+        "pnlRate": -0.0575,
+        "shares": 1800,
+        "availableShares": 1800,
+        "costPrice": 52.119,
+        "currentPrice": 49.12
+      },
+      {
+        "name": "比亚迪",
+        "category": "制造成长",
+        "marketValue": 16660,
+        "pnl": -6157.98,
+        "pnlRate": -0.2694,
+        "shares": 200,
+        "availableShares": 200,
+        "costPrice": 114.021,
+        "currentPrice": 83.3
+      },
+      {
+        "name": "比亚迪",
+        "category": "制造成长",
+        "marketValue": 49980,
+        "pnl": -7650.49,
+        "pnlRate": -0.1323,
+        "shares": 600,
+        "availableShares": 600,
+        "costPrice": 96,
+        "currentPrice": 83.3
+      }
+    ],
+    "analysis": {
+      "totalValue": 607793.7,
+      "totalPnl": -40304.3,
+      "totalPnlRate": -0.0663,
+      "positionCount": 19,
+      "categories": [
+        {
+          "category": "金融红利",
+          "marketValue": 255069,
+          "pnl": -7431.03,
+          "count": 7,
+          "weight": 0.4197,
+          "pnlRate": -0.0291
+        },
+        {
+          "category": "现金/固收",
+          "marketValue": 201467.2,
+          "pnl": 153.4,
+          "count": 2,
+          "weight": 0.3315,
+          "pnlRate": 0.0008
+        },
+        {
+          "category": "制造成长",
+          "marketValue": 72760,
+          "pnl": -15492.09,
+          "count": 3,
+          "weight": 0.1197,
+          "pnlRate": -0.2129
+        },
+        {
+          "category": "科技成长",
+          "marketValue": 42373.1,
+          "pnl": -7539.87,
+          "count": 4,
+          "weight": 0.0697,
+          "pnlRate": -0.1779
+        },
+        {
+          "category": "消费医药",
+          "marketValue": 22500.4,
+          "pnl": -8498.03,
+          "count": 2,
+          "weight": 0.037,
+          "pnlRate": -0.3777
+        },
+        {
+          "category": "商品周期",
+          "marketValue": 13624,
+          "pnl": -1496.68,
+          "count": 1,
+          "weight": 0.0224,
+          "pnlRate": -0.1099
+        }
+      ],
+      "advices": [
+        "金融红利约41.97%，仍是最大底仓，承担组合稳定器作用，但同一风格集中度较高。",
+        "现金/固收约33.15%，可用资金明显提升，说明组合防守垫更厚，后续适合分批而非一次性配置。",
+        "制造成长亏损扩大且权重约11.97%，比亚迪和通威仍是主要回撤来源，需要控制补仓节奏。",
+        "科技成长约6.97%，港股互联网仍处于亏损区，适合以总仓位上限管理风险。",
+        "消费医药权重较低但亏损较深，应先复核长期逻辑，避免单纯因跌幅大而补仓。",
+        "整体仓位约91.8%，较此前下降，组合波动风险有所缓和。"
+      ]
+    },
+    "recognizedAt": "2026-06-24"
+  }
+]

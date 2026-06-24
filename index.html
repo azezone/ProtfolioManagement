@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>股票指标监听看板</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <section>
+          <p class="eyebrow">Watchlist Monitor</p>
+          <h1>股票重要指标监听</h1>
+          <p class="data-note">当前为本地示例数据，可替换为真实行情与财报数据源；页面判断不构成投资建议。</p>
+        </section>
+        <div class="actions">
+          <button class="icon-button" id="refreshBtn" title="刷新数据" aria-label="刷新数据">
+            <span aria-hidden="true">↻</span>
+          </button>
+          <button id="snapshotBtn">上传持仓</button>
+          <button class="primary-button" id="addStockBtn">添加股票</button>
+        </div>
+      </header>
+
+      <section class="summary-grid" aria-label="总览">
+        <article class="metric-panel">
+          <span>关注标的</span>
+          <strong id="totalCount">0</strong>
+        </article>
+        <article class="metric-panel">
+          <span>低估机会</span>
+          <strong id="cheapCount">0</strong>
+        </article>
+        <article class="metric-panel">
+          <span>高估预警</span>
+          <strong id="expensiveCount">0</strong>
+        </article>
+        <article class="metric-panel">
+          <span>市场热度</span>
+          <strong id="heatAverage">0</strong>
+        </article>
+      </section>
+
+      <section class="status-strip" aria-label="数据状态">
+        <span>数据源：本地 watchlist</span>
+        <span>刷新间隔：15 秒</span>
+        <span id="updatedAt">最近更新：--</span>
+      </section>
+
+      <section class="portfolio-panel" aria-label="持仓快照">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Portfolio Snapshot</p>
+            <h2>持仓结构分析</h2>
+          </div>
+          <label class="select-field compact">
+            <span>历史快照</span>
+            <select id="snapshotSelect">
+              <option value="">暂无快照</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="metric-panel">
+            <span>持仓市值</span>
+            <strong id="portfolioValue">0</strong>
+          </article>
+          <article class="metric-panel">
+            <span>浮动盈亏</span>
+            <strong id="portfolioPnl">0</strong>
+          </article>
+          <article class="metric-panel">
+            <span>持仓数量</span>
+            <strong id="portfolioCount">0</strong>
+          </article>
+          <article class="metric-panel">
+            <span>最大类别</span>
+            <strong id="portfolioTopCategory">--</strong>
+          </article>
+        </div>
+
+        <div class="portfolio-layout">
+          <section class="table-wrap compact-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>分类</th>
+                  <th>市值</th>
+                  <th>占比</th>
+                  <th>浮盈亏</th>
+                </tr>
+              </thead>
+              <tbody id="categoryRows">
+                <tr><td colspan="4">上传并保存持仓后显示分类。</td></tr>
+              </tbody>
+            </table>
+          </section>
+          <aside class="advice-panel">
+            <h3>持仓建议</h3>
+            <ul id="adviceList" class="reason-list">
+              <li>暂无快照。上传持仓截图并保存后生成建议。</li>
+            </ul>
+          </aside>
+        </div>
+
+        <section class="pnl-chart-panel" aria-label="各类资产浮盈亏趋势">
+          <div class="chart-head">
+            <div>
+              <h3>各类资产浮盈亏趋势</h3>
+              <p>按历史快照统计，横轴为日期，纵轴为浮盈亏。</p>
+            </div>
+          </div>
+          <div id="pnlChart" class="pnl-chart">
+            <p class="empty-state">至少需要一条持仓快照才能显示曲线。</p>
+          </div>
+        </section>
+      </section>
+
+      <section class="control-band" aria-label="筛选与设置">
+        <label class="search-field">
+          <span>搜索</span>
+          <input id="searchInput" type="search" placeholder="代码、名称、行业">
+        </label>
+        <label class="select-field">
+          <span>估值状态</span>
+          <select id="valuationFilter">
+            <option value="all">全部</option>
+            <option value="cheap">低估</option>
+            <option value="fair">合理</option>
+            <option value="expensive">高估</option>
+          </select>
+        </label>
+        <label class="select-field">
+          <span>排序</span>
+          <select id="sortSelect">
+            <option value="score-desc">综合分从高到低</option>
+            <option value="percentile-asc">历史分位从低到高</option>
+            <option value="heat-desc">热度从高到低</option>
+            <option value="pe-asc">市盈率从低到高</option>
+          </select>
+        </label>
+        <label class="toggle-field">
+          <input id="autoRefresh" type="checkbox" checked>
+          <span>自动刷新</span>
+        </label>
+      </section>
+
+      <section class="workspace">
+        <section class="table-wrap" aria-label="股票列表">
+          <table>
+            <thead>
+              <tr>
+                <th>股票</th>
+                <th>价格</th>
+                <th>PE</th>
+                <th>PB</th>
+                <th>ROE</th>
+                <th>历史分位</th>
+                <th>热度</th>
+                <th>估值</th>
+                <th>综合分</th>
+              </tr>
+            </thead>
+            <tbody id="stockRows"></tbody>
+          </table>
+        </section>
+
+        <aside class="detail-panel" id="detailPanel" aria-label="股票详情">
+          <p class="empty-state">选择一只股票查看详细指标、估值理由和风险信号。</p>
+        </aside>
+      </section>
+    </main>
+
+    <dialog id="stockDialog">
+      <form method="dialog" class="dialog-card" id="stockForm">
+        <header>
+          <h2>添加关注股票</h2>
+          <button class="icon-button" type="button" value="cancel" aria-label="关闭" onclick="this.closest('dialog').close()">×</button>
+        </header>
+        <div class="form-grid">
+          <label>
+            <span>代码</span>
+            <input name="symbol" required placeholder="例如 600519">
+          </label>
+          <label>
+            <span>名称</span>
+            <input name="name" required placeholder="例如 贵州茅台">
+          </label>
+          <label>
+            <span>行业</span>
+            <input name="sector" required placeholder="例如 白酒">
+          </label>
+          <label>
+            <span>价格</span>
+            <input name="price" type="number" min="0" step="0.01" required>
+          </label>
+          <label>
+            <span>市盈率 PE</span>
+            <input name="pe" type="number" min="0" step="0.01" required>
+          </label>
+          <label>
+            <span>市净率 PB</span>
+            <input name="pb" type="number" min="0" step="0.01" required>
+          </label>
+          <label>
+            <span>ROE %</span>
+            <input name="roe" type="number" step="0.1" required>
+          </label>
+          <label>
+            <span>历史分位 %</span>
+            <input name="percentile" type="number" min="0" max="100" step="1" required>
+          </label>
+          <label>
+            <span>成交热度 0-100</span>
+            <input name="heat" type="number" min="0" max="100" step="1" required>
+          </label>
+          <label>
+            <span>收入增速 %</span>
+            <input name="growth" type="number" step="0.1" required>
+          </label>
+        </div>
+        <footer>
+          <button value="cancel">取消</button>
+          <button class="primary-button" value="default">保存</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog id="snapshotDialog">
+      <form method="dialog" class="dialog-card snapshot-card" id="snapshotForm">
+        <header>
+          <h2>上传持仓快照</h2>
+          <button class="icon-button" type="button" value="cancel" aria-label="关闭" onclick="this.closest('dialog').close()">×</button>
+        </header>
+        <div class="snapshot-form-grid">
+          <section class="upload-box">
+            <label>
+              <span>快照日期</span>
+              <input id="snapshotDate" name="snapshotDate" type="date" required>
+            </label>
+            <label>
+              <span>持仓图片</span>
+              <input id="snapshotImage" name="snapshotImage" type="file" accept="image/*" required>
+            </label>
+            <img id="snapshotPreview" alt="持仓截图预览">
+          </section>
+          <section class="parse-box">
+            <label>
+              <span>识别文本或手动整理数据</span>
+              <textarea id="positionText" rows="12" placeholder="每行一只：名称 市值 浮盈亏 持仓 成本 现价&#10;例如：中国平安 98760 -5520.38 2000 52.119 49.380"></textarea>
+            </label>
+            <div class="parser-actions">
+              <button type="button" id="gptRecognizeBtn">使用 AI 识别图片</button>
+              <button type="button" id="loadSampleBtn">填入截图示例</button>
+              <button type="button" class="primary-button" id="parsePositionsBtn">解析持仓</button>
+            </div>
+            <p class="parse-status" id="parseStatus">上传图片会保存原图；解析需要粘贴识别文本，或先使用“填入截图示例”验证流程。</p>
+          </section>
+        </div>
+        <section class="table-wrap compact-table parsed-table">
+          <table>
+            <thead>
+              <tr>
+                <th>名称</th>
+                <th>分类</th>
+                <th>市值</th>
+                <th>盈亏</th>
+                <th>持仓</th>
+                <th>成本/现价</th>
+              </tr>
+            </thead>
+            <tbody id="parsedRows">
+              <tr><td colspan="6">解析后在这里校验。</td></tr>
+            </tbody>
+          </table>
+        </section>
+        <footer>
+          <button value="cancel">取消</button>
+          <button type="submit" class="primary-button" value="default">保存到数据库</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
