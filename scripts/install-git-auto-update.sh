@@ -23,9 +23,9 @@ fi
 
 if [[ -d "$APP_DIR/.git" ]]; then
   git config --global --add safe.directory "$APP_DIR" || true
-  git -C "$APP_DIR" remote set-url origin "$REPO_URL"
-  git -C "$APP_DIR" fetch origin "$BRANCH"
-  git -C "$APP_DIR" reset --hard "origin/$BRANCH"
+  git -c safe.directory="$APP_DIR" -C "$APP_DIR" remote set-url origin "$REPO_URL"
+  git -c safe.directory="$APP_DIR" -C "$APP_DIR" fetch origin "$BRANCH"
+  git -c safe.directory="$APP_DIR" -C "$APP_DIR" reset --hard "origin/$BRANCH"
 else
   rm -rf "$APP_DIR"
   git clone --branch "$BRANCH" "$REPO_URL" "$APP_DIR"
@@ -44,11 +44,12 @@ cat > "$APP_DIR/update-from-git.sh" <<'UPDATE'
 set -euo pipefail
 cd "$(dirname "$0")"
 git config --global --add safe.directory "$(pwd)" || true
-git fetch origin main
-LOCAL="$(git rev-parse HEAD)"
-REMOTE="$(git rev-parse origin/main)"
+SAFE_DIR="$(pwd)"
+git -c safe.directory="$SAFE_DIR" fetch origin main
+LOCAL="$(git -c safe.directory="$SAFE_DIR" rev-parse HEAD)"
+REMOTE="$(git -c safe.directory="$SAFE_DIR" rev-parse origin/main)"
 if [[ "$LOCAL" != "$REMOTE" ]]; then
-  git reset --hard origin/main
+  git -c safe.directory="$SAFE_DIR" reset --hard origin/main
   sudo systemctl restart money.service
 fi
 UPDATE
