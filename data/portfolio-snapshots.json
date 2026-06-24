@@ -856,36 +856,47 @@
         "availableShares": 600,
         "costPrice": 96,
         "currentPrice": 83.3
+      },
+      {
+        "name": "可用现金",
+        "category": "现金/固收",
+        "marketValue": 34585.36,
+        "pnl": 0,
+        "pnlRate": 0,
+        "shares": 34585.36,
+        "availableShares": 34585.36,
+        "costPrice": 1,
+        "currentPrice": 1
       }
     ],
     "analysis": {
-      "totalValue": 607793.7,
+      "totalValue": 642379.06,
       "totalPnl": -40304.3,
-      "totalPnlRate": -0.0663,
-      "positionCount": 19,
+      "totalPnlRate": -0.0627,
+      "positionCount": 20,
       "categories": [
         {
           "category": "金融红利",
           "marketValue": 255069,
           "pnl": -7431.03,
           "count": 7,
-          "weight": 0.4197,
+          "weight": 0.3971,
           "pnlRate": -0.0291
         },
         {
           "category": "现金/固收",
-          "marketValue": 201467.2,
+          "marketValue": 236052.56,
           "pnl": 153.4,
-          "count": 2,
-          "weight": 0.3315,
-          "pnlRate": 0.0008
+          "count": 3,
+          "weight": 0.3675,
+          "pnlRate": 0.0006
         },
         {
           "category": "制造成长",
           "marketValue": 72760,
           "pnl": -15492.09,
           "count": 3,
-          "weight": 0.1197,
+          "weight": 0.1133,
           "pnlRate": -0.2129
         },
         {
@@ -893,7 +904,7 @@
           "marketValue": 42373.1,
           "pnl": -7539.87,
           "count": 4,
-          "weight": 0.0697,
+          "weight": 0.066,
           "pnlRate": -0.1779
         },
         {
@@ -901,7 +912,7 @@
           "marketValue": 22500.4,
           "pnl": -8498.03,
           "count": 2,
-          "weight": 0.037,
+          "weight": 0.035,
           "pnlRate": -0.3777
         },
         {
@@ -909,17 +920,16 @@
           "marketValue": 13624,
           "pnl": -1496.68,
           "count": 1,
-          "weight": 0.0224,
+          "weight": 0.0212,
           "pnlRate": -0.1099
         }
       ],
       "advices": [
-        "金融红利约41.97%，仍是最大底仓，承担组合稳定器作用，但同一风格集中度较高。",
-        "现金/固收约33.15%，可用资金明显提升，说明组合防守垫更厚，后续适合分批而非一次性配置。",
-        "制造成长亏损扩大且权重约11.97%，比亚迪和通威仍是主要回撤来源，需要控制补仓节奏。",
-        "科技成长约6.97%，港股互联网仍处于亏损区，适合以总仓位上限管理风险。",
-        "消费医药权重较低但亏损较深，应先复核长期逻辑，避免单纯因跌幅大而补仓。",
-        "整体仓位约91.8%，较此前下降，组合波动风险有所缓和。"
+        "现金/固收已包含可用现金，合计占比约36.75%，组合防守垫明显提升。",
+        "金融红利仍是最大权益底仓，承担组合稳定器作用，但同一风格集中度较高。",
+        "制造成长和科技成长仍是主要亏损来源，继续加仓前应明确仓位上限。",
+        "消费医药权重不高但亏损较深，适合先复核长期逻辑，而不是机械补仓。",
+        "整体股票/ETF市值约91.8%，计入现金后的资产结构更接近真实账户。"
       ]
     },
     "recognizedAt": "2026-06-24"
